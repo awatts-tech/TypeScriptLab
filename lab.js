@@ -58,9 +58,10 @@ var inventory = [
 function calcInventoryValue(inventoryEntry) {
     var totalValue = 0;
     for (var _i = 0, inventoryEntry_1 = inventoryEntry; _i < inventoryEntry_1.length; _i++) {
-        var inventories = inventoryEntry_1[_i];
-        totalValue += (inventory.product.price * inventory.quantity);
+        var entry = inventoryEntry_1[_i];
+        totalValue += (entry.product.price * entry.quantity);
     }
     return totalValue;
 }
-calcInventoryValue(inventory);
+var inventoryValue = calcInventoryValue(inventory);
+console.log(inventoryValue);

@@ -85,12 +85,17 @@ const inventory: InventoryItem[]=[
 ];
 
 
-function calcInventoryValue( inventoryEntry: InventoryItem[]){
-    let totalValue: number = 0;
-    for (const inventories of inventoryEntry){
-       totalValue += (inventory.product.price * inventory.quantity);
+function calcInventoryValue( inventoryEntry: InventoryItem[]) : number{
+    let totalValue = 0;
+    
+    
+    for (const entry of inventoryEntry){
+       totalValue += (entry.product.price * entry.quantity);
     }
     return totalValue;
    
 }
-calcInventoryValue(inventory);
+
+let inventoryValue = calcInventoryValue(inventory);
+
+console.log(inventoryValue);
